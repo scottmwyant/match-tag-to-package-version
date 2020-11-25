@@ -38,13 +38,13 @@ describe("matchVersion", () => {
     );
   });
 
-  it("should not trow error when versions match with provided prefix", () => {
+  it("should not throw an error when the tag differs by the specified prefix", () => {
     const prefix = "v";
     const version = "0.0.0";
     mock({
       "package.json": JSON.stringify({ version }),
     });
 
-    matchVersion(`${prefix}${version}`, prefix);
+    matchVersion(`refs/tags/${prefix}${version}`, prefix);
   });
 });
