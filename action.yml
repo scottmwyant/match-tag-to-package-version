@@ -6,3 +6,10 @@ runs:
 branding:
   icon: "tag"
   color: "yellow"
+outputs:
+  packageVersion:
+    description: The version number from package.json
+  tag:
+    description: The tag, complete with any prefix
+  tagVersion:
+    description: What's left of the tag after trimming the prefix

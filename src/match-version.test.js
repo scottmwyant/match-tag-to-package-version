@@ -50,6 +50,6 @@ describe("matchVersion", () => {
       "package.json": JSON.stringify({ version }),
     });
 
-    matchVersion(`${prefix}${version}`, prefix);
+    matchVersion(`refs/tags/${prefix}${version}`, prefix);
   });
 });

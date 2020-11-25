@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/geritol/check-version#readme",
   "devDependencies": {
+    "@actions/core": "^1.2.6",
     "chai": "^4.2.0",
     "mocha": "^7.1.1",
     "mock-fs": "^4.11.0"
