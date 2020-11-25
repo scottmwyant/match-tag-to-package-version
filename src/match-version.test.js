@@ -17,12 +17,7 @@ describe("matchVersion", () => {
   });
 
   it("should throw an error when not on ref tag", () => {
-    const version = "v0.0.0";
-    mock({
-      "package.json": JSON.stringify({ version }),
-    });
-
-    expect(() => matchVersion()).to.throw(Error, "not tagged");
+    expect(() => matchVersion('refs/heads/master')).to.throw(Error, "not tagged");
   });
 
   it("should throw an error there is no package.json present", () => {
