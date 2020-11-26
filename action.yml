@@ -6,3 +6,8 @@ runs:
 branding:
   icon: "tag"
   color: "yellow"
+outputs:
+  tag:
+    description: The tag with `refs/tags/` stripped off.
+  version:
+    description: The version string exactly as it appears in package.json
