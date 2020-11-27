@@ -7,10 +7,10 @@ module.exports = (gitRef, prefix = "") => {
   }
   
   const version = JSON.parse(fs.readFileSync("package.json", "utf8")).version;
-  const ref = prefix.startsWith('refs/tags/') ? '' : 'refs/tags/'
-  const tag = gitRef.replace(new RegExp(`${ref}${prefix}`),"");
+  const tag = gitRef.replace(/^refs\/tags\//, "");
+  prefix = prefix.replace(/^refs\/tags\//,"");
 
-  if (tag !== version) {
+  if (tag.replace(new RegExp(`^${prefix}`), '') !== version) {
     throw new Error(
       `Git tag (${tag}) does not match package.json version (${version})`
     );
