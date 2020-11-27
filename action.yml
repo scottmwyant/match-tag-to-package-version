@@ -11,3 +11,8 @@ outputs:
     description: The tag with `refs/tags/` stripped off.
   version:
     description: The version string exactly as it appears in package.json
+inputs:
+  tag_prefix:
+    default: ''
+    description: Allow the tag to differ from the package version by this prefix
+    required: false
